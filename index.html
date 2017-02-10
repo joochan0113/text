@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./W3.CSS Template_files/w3.css">
+<link rel="stylesheet" href="./W3.CSS Template_files/css">
+<link rel="stylesheet" href="./W3.CSS Template_files/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<style>
+body {
+    background-color: lightgreen;
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        background-color: lightblue;
+    }
+}
+</style>
+<body>
+
+<h3>A demonstration of how to access a Text Field</h3>
+
+<input type="text" id="myText" value="Some text...">
+
+<p>Click the "Try it" button to get the text in the text field.</p>
+
+<button onclick="myFunction()">Try it</button>
+<button onclick="cf()">Clear it</button>
+<p id="demo"></p>
+    
+<form action="save-to-log.php" method="POST">
+  <fieldset>
+    <legend>Add to log</legend>
+    <p>
+      Message:
+      <textarea name="message"></textarea>
+    </p>
+    <p>
+      <input type="submit" value="SAVE" />
+    </p>
+  </fieldset>
+</form>
+    
+<script>
+function myFunction() {
+    var x = document.getElementById("myText").value;
+    var temp;
+    var text;
+    if (x == null)
+        {
+         localStorage.text = x;   
+         document.getElementById("demo").innerHTML = localStorage.text;
+         temp = x;
+        }
+    else
+        {
+            localStorage.text = localStorage.text+x;
+            document.getElementById("demo").innerHTML = localStorage.text;
+        }
+    
+    }
+
+function cf() {
+    localStorage.text = localStorage.clear()+ " ";
+    document.getElementById("demo").innerHTML = localStorage.text;
+    }
+
+
+    /*
+    function clickCounter() {
+        if(typeof(Storage) !== "undefined") {
+            if (localStorage.clickcount) {
+                localStorage.clickcount = Number(localStorage.clickcount)+1;
+            } else {
+                localStorage.clickcount = 1;
+            }
+            document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+    }
+    */
+    
+</script>
+</body>
+        <div class="w3-container w3-third" style ="right:0;" myFunction()>
+            x;
+        </div>
+
+</html>
